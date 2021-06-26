@@ -13,8 +13,8 @@ server.use("/api", projectRouter);
 server.use("/api", resourceRouter);
 server.use("/api", taskRouter);
 
-server.get("/", (req, res) => {
-  res.status(200).json({ api: "We up and running my dude!" });
+server.get("/api", (req, res) => {
+  res.status(200).json({ api: "This challenge is up and running my dude!" });
 });
 
 module.exports = server;
