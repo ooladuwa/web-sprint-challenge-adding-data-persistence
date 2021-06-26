@@ -1,4 +1,3 @@
-// build your `/api/projects` router here
 const express = require("express");
 
 const Projects = require("./model.js");
@@ -22,6 +21,7 @@ router.post("/projects", async (req, res, next) => {
       project_completed: req.body.project_completed,
     });
     console.log(newProject);
+    // if(newProject.project_completed === )
     res.status(201).json(newProject);
   } catch (err) {
     next(err);
