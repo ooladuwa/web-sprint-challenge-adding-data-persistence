@@ -1,17 +1,16 @@
 const db = require("../../data/dbConfig.js");
-// const helpers = require("../../data/helpers/booleanHelpers.js");
 
 const findResources = () => {
-  return db("Resources");
+  return db("resources");
 };
 
 const createResource = async (resource) => {
-  const [resource_id] = await db("Resources").insert(resource);
-  return findResources().where({ resource_id });
+  const [resource_id] = await db("resources").insert(resource);
+
+  return db("resources").where("resource_id", resource_id).first();
 };
 
 module.exports = {
   findResources,
   createResource,
 };
-// build your `Resource` model here
